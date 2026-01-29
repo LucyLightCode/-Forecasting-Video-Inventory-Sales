@@ -1,45 +1,104 @@
-Forecasting  Video Game Inventory Analysis
+# 📊 Forecasting Video Games Inventory Sales
 
-Project Setup and Data Loading
-Import necessary libraries: The code starts by importing essential libraries like pandas, NumPy, matplotlib, seaborn, and statsmodels. These libraries are commonly used for data manipulation, analysis, and visualization.
+<img width="1519" height="2000" alt="image" src="https://github.com/user-attachments/assets/c149dd39-bc5f-4521-a328-8dee16e48005" />
 
-Clone the repository: The code then clones a GitHub repository containing the project files, including the dataset. Make sure you have Git installed and configured in your Colab environment.
 
-Navigate to the project directory: The %cd command is used to change the current working directory to the cloned repository.
+Forecast monthly video game sales to help optimize inventory management for a reseller or retailer.
 
-Set up Git configuration: If you plan to push changes back to the repository, you'll need to configure your Git email and username using !git config.
+Accurate forecasting ensures adequate stock levels, reduces costs of overstock, and ensures products are available when customers want them.
 
-Create a new branch: It's recommended to create a new branch for your work using !git checkout -b.
+---
 
-Mount Google Drive (optional): If your dataset is stored in Google Drive, you can mount it to access the data directly within Colab.
+## 📌 Project Overview
 
-Load the dataset: The code reads the dataset from a CSV file using pd.read_csv.
+This project contains a complete analysis and forecasting workflow for video game inventory sales:
+- Data loading and cleaning
+- Exploratory Data Analysis (EDA)
+- Feature engineering
+- Model training & evaluation
+- Insights & interpretation
 
-Data Exploration and Analysis
-Univariate analysis: Explore individual variables using descriptive statistics, histograms, and other visualizations. This step helps understand the distribution and characteristics of each variable.
+This helps businesses make data-driven decisions to balance inventory with expected demand.
 
-Bivariate analysis: Analyze relationships between pairs of variables using scatter plots, box plots, and correlation matrices. This step helps identify potential dependencies and patterns between variables.
+---
 
-Categorical variable analysis: Explore the distribution of categorical variables using bar charts and frequency tables. This step helps understand the composition and relationships between categories.
+## 📁 Dataset
 
-Data Preprocessing (if needed)
-Handling missing values: If there are missing values in the dataset, you might need to impute or remove them depending on the extent and nature of missingness.
+The dataset includes monthly sales data for video games:
+- `monthly_sales_data.csv` — raw sales data
+- `clean_monthly_sales_data.csv` — cleaned and formatted for forecasting
 
-Feature engineering: Create new features from existing ones to improve model performance. This step often involves domain knowledge and creativity.
+Each record includes:
+- Date/month of sale
+- Total units sold  
+  Category,	Month,	Sales	Year,	DayOfWeek,	Platform,	Holiday,	Promotion,	Quarte*
 
-Data transformation: Transform variables to meet the assumptions of the model you plan to use. This might involve scaling, normalization, or encoding categorical variables.
+---
 
-Model Selection and Training
-Choose an appropriate model: Based on the problem and the nature of the data, select a suitable model for forecasting. This could be a time series model like ARIMA, a regression model, or a machine learning algorithm.
+## 🧠 Tools & Technologies
 
-Train the model: Fit the chosen model to the data, using a portion of the data for training and the rest for validation. This step involves adjusting model parameters to minimize prediction errors.
+| Component | Tools |
+|-----------|-------|
+| Language  | Python |
+| Notebook  | Jupyter / Google Colab |
+| Libraries | Pandas, NumPy, Matplotlib, Seaborn, Scikit-Learn |
+| Forecasting Models | ( ARIMA , ETS |
 
-Model Evaluation and Forecasting
-Evaluate the model: Assess the model's performance using metrics like RMSE, MAE, or R-squared. This step helps determine how well the model generalizes to unseen data.
+---
 
-Generate forecasts: Use the trained model to make predictions for future time periods. This step involves specifying the forecast horizon and any relevant input variables.
+## 🔎 Methodology
 
-Output and Interpretation
-Visualize the forecasts: Create plots to display the predicted values along with the actual data. This step helps communicate the forecast results effectively.
+1. **Data Preparation**
+   - Load data
+   - Convert dates to datetime format
+   - Handle missing values
 
-Interpret the results: Analyze the forecast output and draw conclusions about the expected sales trends. This step involves considering the model's assumptions and limitations.orecasting-Video-Inventory-Sales
+2. **Exploratory Data Analysis**
+   - Plot sales trends over time
+   - Identify seasonal patterns
+   - Examine sales volatility
+
+3. **Feature Engineering**
+   - Create lag features
+   - Rolling averages
+   - Time components (month, year)
+
+4. **Model Training**
+   - Train forecasting models (e.g., ARIMA / ETS)
+   - Tune hyperparameters
+
+5. **Evaluation**
+   - Compare model performance using MAE / RMSE
+   - Validate on test set
+
+---
+
+## 📈 Results and Insights
+
+| Model   | Train RMSE | Test RMSE |
+|---------|------------|-----------|
+| 0  ARIMA  |30307.257416 |25187.767836 |
+| 1    ETS  |31772.046436 |24549.700275 |
+
+
+### 📈 Model Results & 4-Month Forecast
+
+**Model Selection:**  
+Based on the evaluation of forecasting models, **ARIMA** was chosen because it achieved a slightly lower **Root Mean Squared Error (RMSE)** compared to the ETS model, indicating a better fit to the test data.
+
+**4-Month Sales Forecast:**
+
+| Month       | Forecasted Sales |
+|------------|-----------------|
+| 2024-01-01 | 114,233         |
+| 2024-02-01 | 112,433         |
+| 2024-03-01 | 111,662         |
+| 2024-04-01 | 111,332         |
+
+**Business Implications:**  
+- **Inventory Management:** Adjust orders to prevent overstocking while aligning with the forecasted stable trend.  
+- **Resource Optimization:** Reallocate staffing, production, and logistics according to projected sales.  
+- **Sales & Marketing:** Refine strategies to address forecasted demand and explore opportunities to stimulate sales.  
+- **Financial Planning:** Integrate the forecast into revenue projections and budgeting for improved accuracy.
+
+> **Insight:** The forecast indicates a slight, steady de
